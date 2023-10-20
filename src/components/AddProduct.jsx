@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 
 
 const AddProduct = () => {
@@ -12,8 +13,8 @@ const AddProduct = () => {
         const description = form.description.value;
         const price = form.price.value;
         const photo = form.photo.value;
-        console.log(name, brand, type, rating, description, price, photo);
         const newCar = { name, brand, type, rating, description, price, photo };
+        console.log(newCar);
 
         fetch('http://localhost:5000/cars', {
             method: 'POST',
@@ -25,6 +26,14 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Car Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                }
             })
 
     }
