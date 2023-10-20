@@ -8,6 +8,7 @@ import {
 import Root from './components/Root';
 import Home from './components/Home';
 import AddProduct from './components/AddProduct';
+import Brand from './components/Brand';
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
       {
         path: '/addProduct',
         element: <AddProduct></AddProduct>
+      },
+      {
+        path: 'brand/:id',
+        element: <Brand></Brand>,
+        loader: ()=>fetch('http://localhost:5000/cars')
       }
     ]
   },

@@ -13,7 +13,14 @@ const AddProduct = () => {
         const description = form.description.value;
         const price = form.price.value;
         const photo = form.photo.value;
-        const newCar = { name, brand, type, rating, description, price, photo };
+        let brandImage;
+        if(brand === 'Toyota')brandImage = 'https://i.ibb.co/N1HFJWb/Toyota-EU-svg.png';
+        else if(brand === 'BMW')brandImage = 'https://i.ibb.co/VWVb7N3/BMW-logo-gray-svg.png';
+        else if(brand === 'Ford')brandImage = 'https://i.ibb.co/844YqWN/Ford-logo-flat-svg.png';
+        else if(brand === 'Honda')brandImage = 'https://i.ibb.co/dftYzPn/honda-logo-icon-181334.png';
+        else if(brand === 'Mercedes-Benz')brandImage = 'https://i.ibb.co/s5b9h87/m-b.jpg';
+        else if(brand === 'Audi')brandImage = 'https://i.ibb.co/w6sKZ9q/logo-Audi.png';
+        const newCar = { name, brand, type, rating, description, price, photo, brandImage};
         console.log(newCar);
 
         fetch('http://localhost:5000/cars', {
@@ -56,7 +63,14 @@ const AddProduct = () => {
                             <span className="label-text">Brand Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="brand" placeholder="Brand Name" className="input input-bordered w-full" />
+                        <select className="input input-bordered w-full" name="brand">
+                                <option value="Toyota">Toyota</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                <option value="Audi">Audi</option>
+                            </select>
                         </label>
                     </div>
                 </div>
