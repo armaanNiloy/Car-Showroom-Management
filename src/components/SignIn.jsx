@@ -1,30 +1,50 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const SignIn = () => {
-    const {login} = useContext(AuthContext);
+    const { login, signInGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    const handleSignIn = e =>{
+    const handleSignIn = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log( email, password);
+        console.log(email, password);
         login(email, password)
-        .then(res =>{
-            console.log(res.user);
-            Swal.fire({
-                icon: 'success',
-                title: 'Login',
-                text: 'Successfully Login'
+            .then(res => {
+                console.log(res.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login',
+                    text: 'Successfully Login'
+                })
+                navigate(location?.state ? location.state : '/');
             })
-            navigate(location?.state ? location.state : '/');
-        })
-        .catch(error =>console.error(error))
-        
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login',
+                    text: 'Wrong password of email, try again...'
+                })
+                navigate('/signIn');
+            })
+    }
+    const handleGoogleSignIn = () => {
+        signInGoogle()
+            .then(result => {
+                console.log(result);
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login',
+                    text: 'Somethings went wrong.'
+                })
+            })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -46,13 +66,17 @@ const SignIn = () => {
                             </label>
                             <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <p>New here?<Link className="label-text-alt link link-hover text-base text-blue-600" to='/signUp'>Please Sign Up</Link></p>
                             </label>
                         </div>
-                        <div className="form-control mt-6">
+                        
+                        <div className="form-control mt-6 gap-3">
                             <button className="btn btn-primary">Login</button>
+                            <button onClick={handleGoogleSignIn} className="btn btn-accent">Login with Google</button>
                         </div>
+                        
                     </form>
+                    
                 </div>
             </div>
         </div>

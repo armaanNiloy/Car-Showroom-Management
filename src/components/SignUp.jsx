@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -64,7 +64,7 @@ const SignUp = () => {
                             </label>
                             <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <p>Already have an account?<Link className="label-text-alt link link-hover text-base text-blue-600" to='/signIn'>Please Login</Link></p>
                             </label>
                         </div>
                         {
