@@ -12,13 +12,16 @@ import Brand from './components/Brand';
 import Details from './components/Details';
 import UpdateDetails from './components/UpdateDetails';
 import Cart from './components/Cart';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import AuthProvider from './provider/AuthProvider';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    children:[
+    children: [
       {
         path: '/',
         element: <Home></Home>
@@ -30,22 +33,30 @@ const router = createBrowserRouter([
       {
         path: 'brand/:id',
         element: <Brand></Brand>,
-        loader: ()=>fetch('http://localhost:5000/cars')
+        loader: () => fetch('http://localhost:5000/cars')
       },
       {
         path: 'details/:id',
         element: <Details></Details>,
-        loader: ({params})=>fetch(`http://localhost:5000/cars/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`)
       },
       {
         path: 'update/:id',
         element: <UpdateDetails></UpdateDetails>,
-        loader: ({params})=>fetch(`http://localhost:5000/cars/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`)
       },
       {
         path: '/cart',
         element: <Cart></Cart>,
-        loader: ()=> fetch('http://localhost:5000/cart')
+        loader: () => fetch('http://localhost:5000/cart')
+      },
+      {
+        path: '/signIn',
+        element: <SignIn></SignIn>
+      },
+      {
+        path: 'signUp',
+        element: <SignUp></SignUp>
       }
     ]
   },
@@ -53,6 +64,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
