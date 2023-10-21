@@ -40,7 +40,7 @@ const Navbar = () => {
             {
                 user ?
                     <div className="navbar-end gap-2">
-                        <h3>{user.displayName || user.email}</h3>
+                        <h3 className="invisible md:visible">{user.displayName || user.email}</h3>
                         <img className="rounded-full w-10" src={user.photoURL} alt="" />
                         <button onClick={handleSignOut} className="btn">Sign Out</button>
                     </div>
