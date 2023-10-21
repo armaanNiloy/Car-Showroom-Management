@@ -11,6 +11,8 @@ const Cart = () => {
     const realData = cartData.filter(cart => cart.userEmail === user.email);
     const [carts, setCarts] = useState(realData);
 
+    
+
     const handleDelete = id => {
         Swal.fire({
             title: 'Are you sure?',

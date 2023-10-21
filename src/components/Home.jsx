@@ -100,7 +100,7 @@ const Home = () => {
             </section>
             <h2 className="text-center text-4xl text-black mb-10 font-bold">Featured tools</h2>
             <section className="grid grid-cols-1 md:grid-cols-2 mx-2 md:mx-8 lg:mx-20 gap-5 mb-10">
-                <div className="p-3 md:p-10 text-center bg-white rounded-md">
+                <div className="p-3 md:p-10 text-center bg-white rounded-md shadow-2xl">
                     <div className="flex justify-center mt-2 h-fit md:h-1/2">
                         <img className="w-1/2 h-1/2" src="https://consumer.tcimg.net/assets/_next/static/images/find-your-fit-c3e69b766901145f689dc9d45db2511d.png?auto=format&fit=max&h=146.2429906542056&w=480" alt="" />
                     </div>
@@ -110,7 +110,7 @@ const Home = () => {
                         <button className="px-8 py-3 rounded-full bg-black text-white text-lg md:text-2xl font-semibold mt-2">Start quiz</button>
                     </div>
                 </div>
-                <div className="p-3 md:p-10 text-center bg-white rounded-md">
+                <div className="p-3 md:p-10 text-center bg-white rounded-md shadow-2xl">
                     <div className="flex justify-center mt-2 h-fit md:h-1/2">
                         <img className="w-1/2 h-1/2" src="https://consumer.tcimg.net/assets/_next/static/images/shop-by-budget-d249f20ce1d3fb7fb7da7f1dc8ed3e5f.png?auto=format&fit=max&h=212.0754716981132&w=160" alt="" />
                     </div>
@@ -120,7 +120,7 @@ const Home = () => {
                         <button className="px-8 py-3 rounded-full bg-black text-white text-lg md:text-2xl font-semibold mt-2">See your buying power</button>
                     </div>
                 </div>
-                <div className="p-3 md:p-10 text-center bg-white rounded-md">
+                <div className="p-3 md:p-10 text-center bg-white rounded-md shadow-2xl">
                     <div className="flex justify-center mt-2 h-fit md:h-1/2">
                         <img className="w-1/2 h-1/2" src="https://consumer.tcimg.net/assets/_next/static/images/build-and-price-e166dc27e8dda05c627d2d8074920ef3.png?auto=format&fit=max&h=96.85714285714285&w=90" alt="" />
                     </div>
@@ -130,7 +130,7 @@ const Home = () => {
                         <button className="px-8 py-3 rounded-full bg-black text-white text-lg md:text-2xl font-semibold mt-2">Build your car</button>
                     </div>
                 </div>
-                <div className="p-3 md:p-10 text-center bg-white rounded-md">
+                <div className="p-3 md:p-10 text-center bg-white rounded-md shadow-2xl">
                     <div className="flex justify-center mt-2 h-fit md:h-1/2">
                         <img className="w-1/2 h-1/2" src="https://consumer.tcimg.net/assets/_next/static/images/sell-your-car-3535592c22047d856102d713367192eb.png?auto=format&fit=max&h=310.27624309392263&w=480" alt="" />
                     </div>
