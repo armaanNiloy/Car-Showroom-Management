@@ -35,8 +35,8 @@ const SignUp = () => {
                 console.log(result.user);
                 Swal.fire({
                     icon: 'success',
-                    title: 'Login',
-                    text: 'Successfully Login'
+                    title: 'Sign Up',
+                    text: 'Successfully Sign Up'
                 })
                 navigate(location?.state ? location.state : '/');
             })
@@ -71,7 +71,7 @@ const SignUp = () => {
                             signUpError && <p className="text-red-700">{signUpError}</p>
                         }
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">Sign Up</button>
                         </div>
                     </form>
                 </div>

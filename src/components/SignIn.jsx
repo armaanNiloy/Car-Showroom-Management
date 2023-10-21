@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const SignIn = () => {
     const {login} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
     const handleSignIn = e =>{
         e.preventDefault();
         const email = e.target.email.value;
@@ -12,7 +16,12 @@ const SignIn = () => {
         login(email, password)
         .then(res =>{
             console.log(res.user);
-            alert('login successfully');
+            Swal.fire({
+                icon: 'success',
+                title: 'Login',
+                text: 'Successfully Login'
+            })
+            navigate(location?.state ? location.state : '/');
         })
         .catch(error =>console.error(error))
         

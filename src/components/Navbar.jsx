@@ -1,7 +1,19 @@
-import {  Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const handleSignOut = () => {
+        logOut()
+            .then(res =>{
+                console.log(res);
+                navigate('/');
+            })
+            .catch(error => console.error(error))
+    }
     const navlinks = <>
         <li><NavLink to='/addProduct'>Add Product</NavLink></li>
         <li><NavLink to='/cart'>Add to Cart</NavLink></li>
@@ -24,9 +36,19 @@ const Navbar = () => {
                     {navlinks}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <Link to='/signIn'><a className="btn">Login</a></Link>
-            </div>
+            
+            {
+                user ?
+                    <div className="navbar-end gap-2">
+                        <h3>{user.displayName || user.email}</h3>
+                        <img className="rounded-full w-10" src={user.photoURL} alt="" />
+                        <button onClick={handleSignOut} className="btn">Sign Out</button>
+                    </div>
+                    :
+                    <div className="navbar-end">
+                        <Link to='/signIn'><a className="btn">Login</a></Link>
+                    </div>
+            }
         </div>
     );
 };
