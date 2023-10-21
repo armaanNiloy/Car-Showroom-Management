@@ -6,6 +6,49 @@ const Details = () => {
     const car = useLoaderData();
     const { name, brand, type, rating, description, price, photo, brandImage } = car;
     const newCar = { name, brand, type, rating, description, price, photo, brandImage };
+    let newRating = <>
+        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+    </>
+    if (rating === '2') {
+        newRating = <>
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+        </>
+    }
+    else if(rating === '3'){
+        newRating = <>
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+        </>
+    }
+    else if(rating === '4'){
+        newRating = <>
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+        </>
+    }
+    else if(rating === '5'){
+        newRating = <>
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+        </>
+    }
     const handleAddCart = () => {
         fetch('https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cart', {
             method: 'POST',
@@ -30,19 +73,15 @@ const Details = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
-                <img src={photo} className="max-w-sm rounded-lg shadow-2xl" />
+                <img src={photo} className="max-w-sm rounded-lg shadow-2xl w-3/4 md:w-fit h-3/4 md:h-fit" />
                 <div>
-                    <h1 className="text-5xl font-bold">{name}</h1>
-                    <h1 className="text-3xl font-bold">Brand: {brand}</h1>
+                    <h1 className="text-2xl md:text-5xl font-bold">{name}</h1>
+                    <h1 className="text-xl md:text-3xl font-bold">Brand: {brand}</h1>
                     <p className="py-6">{description}</p>
                     <p>${price}</p>
                     <p>Type: {type}</p>
                     <div className="rating">
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        {newRating}
                     </div>
                     <br />
 
