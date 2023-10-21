@@ -46,11 +46,11 @@ const UpdateDetails = () => {
             })
     }
     return (
-        <div className="bg-[#F4F3F0] p-24">
+        <div className="bg-[#F4F3F0] p-2 md:p-24">
             <h2 className="text-3xl font-extrabold">Update car: {name}</h2>
             <form onSubmit={handleUpdateProduct}>
                 
-                <div className="md:flex mb-8">
+                <div className="md:flex flex-col md:flex-row mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
                             <span className="label-text">Car Name</span>
@@ -59,7 +59,7 @@ const UpdateDetails = () => {
                             <input type="text" name="name" defaultValue={name} placeholder="Car Name" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 ml-0 md:ml-4">
                         <label className="label">
                             <span className="label-text">Brand Name</span>
                         </label>
@@ -92,7 +92,7 @@ const UpdateDetails = () => {
                             </select>
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 ml-0 md:ml-4">
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
@@ -117,7 +117,7 @@ const UpdateDetails = () => {
                             </select>
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 ml-0 md:ml-4">
                         <label className="label">
                             <span className="label-text">Short description</span>
                         </label>

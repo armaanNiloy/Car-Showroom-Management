@@ -45,11 +45,11 @@ const AddProduct = () => {
 
     }
     return (
-        <div className="bg-[#F4F3F0] p-24">
+        <div className="bg-[#F4F3F0] p-3 md:p-24">
             <h2 className="text-3xl font-extrabold">Add a Car</h2>
             <form onSubmit={handleAddProduct}>
                 {/* form name and quantity row */}
-                <div className="md:flex mb-8">
+                <div className="md:flex flex-col md:flex-row mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
                             <span className="label-text">Car Name</span>
@@ -58,7 +58,7 @@ const AddProduct = () => {
                             <input type="text" name="name" placeholder="Car Name" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 ml-0 md:ml-4">
                         <label className="label">
                             <span className="label-text">Brand Name</span>
                         </label>
@@ -91,7 +91,7 @@ const AddProduct = () => {
                             </select>
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 ml-0 md:ml-4">
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
@@ -116,7 +116,7 @@ const AddProduct = () => {
                             </select>
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 ml-0 md:ml-4">
                         <label className="label">
                             <span className="label-text">Short description</span>
                         </label>
