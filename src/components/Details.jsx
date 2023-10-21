@@ -75,7 +75,7 @@ const Details = () => {
             })
     }
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-pink-400">
             <div className="hero-content flex-col lg:flex-row">
                 <img src={photo} className="max-w-sm rounded-lg shadow-2xl w-3/4 md:w-fit h-3/4 md:h-fit" />
                 <div>

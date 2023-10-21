@@ -45,7 +45,7 @@ const AddProduct = () => {
 
     }
     return (
-        <div className="bg-[#F4F3F0] p-3 md:p-24">
+        <div className="p-3 md:p-24">
             <h2 className="text-3xl font-extrabold">Add a Car</h2>
             <form onSubmit={handleAddProduct}>
                 {/* form name and quantity row */}

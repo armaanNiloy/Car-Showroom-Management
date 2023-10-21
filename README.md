@@ -1,8 +1,12 @@
-# React + Vite
+-----------------------------------------------Auto Trade-------------------------------------------
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---------------------------   Live Link: https://assignment-10-fac73.web.app/    ------------------
 
-Currently, two official plugins are available:
+--------------------------------------- Features of this project -----------------------------------
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. MongoDB: The data of this project is store by MongoDB database system.
+2. Firebase Authentication: Firebase Authentication: In this project, user is authenticated by Firebase authenticaion system for both login and registaion.
+3. Private Router: In this project there is some special features add for authenticated user. If someone wants to go that private router, the system will take him/her to the login page and request to login first.
+4. Mode: Dark and light mode is applied in this project.
+5. CRUD operation: CRUD operation is applied in backend to store and get data from database.
+

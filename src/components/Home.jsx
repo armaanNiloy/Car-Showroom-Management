@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 const Home = () => {
-    
+
 
     return (
         <div>
@@ -106,7 +106,7 @@ const Home = () => {
                     </div>
                     <div className="h-auto">
                         <h3 className="text-xl md:text-3xl font-bold text-black mt-2">Find Your Fit</h3>
-                        <p className="mt-2">Not sure what you want? Answer a few questions to find what fits you best.</p>
+                        <p className="mt-2 text-black">Not sure what you want? Answer a few questions to find what fits you best.</p>
                         <button className="px-8 py-3 rounded-full bg-black text-white text-lg md:text-2xl font-semibold mt-2">Start quiz</button>
                     </div>
                 </div>
@@ -116,7 +116,7 @@ const Home = () => {
                     </div>
                     <div className="h-auto">
                         <h3 className="text-xl md:text-3xl font-bold text-black mt-2">Shop by budget</h3>
-                        <p className="mt-2">Save time and narrow down cars that fit your monthly payment and price point.</p>
+                        <p className="mt-2 text-black">Save time and narrow down cars that fit your monthly payment and price point.</p>
                         <button className="px-8 py-3 rounded-full bg-black text-white text-lg md:text-2xl font-semibold mt-2">See your buying power</button>
                     </div>
                 </div>
@@ -126,7 +126,7 @@ const Home = () => {
                     </div>
                     <div className="h-auto">
                         <h3 className="text-xl md:text-3xl font-bold text-black mt-2">Build and price</h3>
-                        <p className="mt-2">Choose the make, model, trim, and options you want.</p>
+                        <p className="mt-2 text-black">Choose the make, model, trim, and options you want.</p>
                         <button className="px-8 py-3 rounded-full bg-black text-white text-lg md:text-2xl font-semibold mt-2">Build your car</button>
                     </div>
                 </div>
@@ -136,7 +136,7 @@ const Home = () => {
                     </div>
                     <div className="h-auto">
                         <h3 className="text-xl md:text-3xl font-bold text-black mt-2">Sell and trade</h3>
-                        <p className="mt-2">Get an offer in minutes, then cash out or trade in.</p>
+                        <p className="mt-2 text-black">Get an offer in minutes, then cash out or trade in.</p>
                         <button className="px-8 py-3 rounded-full bg-black text-white text-lg md:text-2xl font-semibold mt-2">Learn more</button>
                     </div>
                 </div>

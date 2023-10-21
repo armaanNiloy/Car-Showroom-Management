@@ -46,7 +46,7 @@ const UpdateDetails = () => {
             })
     }
     return (
-        <div className="bg-[#F4F3F0] p-2 md:p-24">
+        <div className="p-2 md:p-24">
             <h2 className="text-3xl font-extrabold">Update car: {name}</h2>
             <form onSubmit={handleUpdateProduct}>
                 
@@ -137,7 +137,7 @@ const UpdateDetails = () => {
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="Add Car" className="btn btn-block" />
+                <input type="submit" value="Update Car" className="btn btn-block" />
 
             </form>
         </div>

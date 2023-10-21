@@ -7,7 +7,7 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const Cart = () => {
     const cartData = useLoaderData();
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const realData = cartData.filter(cart => cart.userEmail === user.email);
     const [carts, setCarts] = useState(realData);
 
@@ -39,27 +39,30 @@ const Cart = () => {
                         }
                     })
             }
-        
+
         })
     }
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mx-3 md:mx-10">
-            {
-                carts.map((cart, idx) => <div key={idx}>
-                    <div className="card lg:card-side bg-base-100 shadow-xl">
-                        <figure className="w-full lg:w-1/2"><img className="h-full lg:h-40 w-full" src={cart.photo} alt="Album" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">{cart.name}</h2>
-                            <p>{cart.type}</p>
-                            <p>${cart.price}</p>
-                            <div className="card-actions justify-start lg:justify-end">
-                                <button onClick={() => handleDelete(cart._id)} className="btn btn-primary">Delete</button>
+        <div>
+            <h2 className="text-5xl text-center my-10">MY CART</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mx-3 md:mx-10 mb-5">
+                {
+                    carts.map((cart, idx) => <div key={idx}>
+                        <div className="card lg:card-side bg-pink-400 shadow-xl">
+                            <figure className="w-full lg:w-1/2"><img className="h-full lg:h-40 w-full" src={cart.photo} alt="Album" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title">{cart.name}</h2>
+                                <p>{cart.type}</p>
+                                <p>${cart.price}</p>
+                                <div className="card-actions justify-start lg:justify-end">
+                                    <button onClick={() => handleDelete(cart._id)} className="btn btn-primary">Delete</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>)
-            }
+                    </div>)
+                }
+            </div>
         </div>
     );
 };
