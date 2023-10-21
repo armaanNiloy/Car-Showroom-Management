@@ -13,8 +13,8 @@ const Cars = ({ car }) => {
                 </h2>
                 <p>$ {price}</p>
                 <div className="card-actions justify-end">
-                    <Link to={`details/${_id}`}><button className="badge badge-outline">Update</button></Link>
-                    <Link><button className="badge badge-outline">Detail</button></Link>
+                    <Link to={`/update/${_id}`}><button className="badge badge-outline">Update</button></Link>
+                    <Link to={`/details/${_id}`}><button className="badge badge-outline">Detail</button></Link>
                 </div>
             </div>
         </div>

@@ -46,7 +46,10 @@ const Brand = () => {
             </div>
             <div className="grid grid-cols-2 gap-10 my-10 mx-20">
                 {
+                    requiredCars.length> 0?
                     requiredCars.map((car, idx) => <Cars key={idx} car={car}></Cars>)
+                    :
+                    <h2>NO data found</h2>
                 }
             </div>
         </div>
