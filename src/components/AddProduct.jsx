@@ -23,7 +23,7 @@ const AddProduct = () => {
         const newCar = { name, brand, type, rating, description, price, photo, brandImage};
         console.log(newCar);
 
-        fetch('https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cars', {
+        fetch('https://auto-trader-server-pbif25ges-arman-hossains-projects.vercel.app/cars', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

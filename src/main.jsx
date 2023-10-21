@@ -16,12 +16,14 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import AuthProvider from './provider/AuthProvider';
 import PrivateRoutes from './components/PrivateRouter';
+import Error from './components/Error';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',
@@ -34,22 +36,22 @@ const router = createBrowserRouter([
       {
         path: 'brand/:id',
         element: <Brand></Brand>,
-        loader: () => fetch('https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cars')
+        loader: () => fetch('https://auto-trader-server-pbif25ges-arman-hossains-projects.vercel.app/cars')
       },
       {
         path: 'details/:id',
         element: <PrivateRoutes><Details></Details></PrivateRoutes>,
-        loader: ({ params }) => fetch(`https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cars/${params.id}`)
+        loader: ({ params }) => fetch(`https://auto-trader-server-pbif25ges-arman-hossains-projects.vercel.app/cars/${params.id}`)
       },
       {
         path: 'update/:id',
         element: <PrivateRoutes><UpdateDetails></UpdateDetails></PrivateRoutes>,
-        loader: ({ params }) => fetch(`https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cars/${params.id}`)
+        loader: ({ params }) => fetch(`https://auto-trader-server-pbif25ges-arman-hossains-projects.vercel.app/cars/${params.id}`)
       },
       {
         path: '/cart',
         element: <PrivateRoutes><Cart></Cart></PrivateRoutes>,
-        loader: () => fetch('https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cart')
+        loader: () => fetch('https://auto-trader-server-pbif25ges-arman-hossains-projects.vercel.app/cart')
       },
       {
         path: '/signIn',

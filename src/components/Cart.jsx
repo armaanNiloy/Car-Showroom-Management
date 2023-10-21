@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 
 const Cart = () => {
     const cartData = useLoaderData();
-    const [carts, setCarts] = useState(cartData);
+    const {user} = useContext(AuthContext);
+    const realData = cartData.filter(cart => cart.userEmail === user.email);
+    const [carts, setCarts] = useState(realData);
 
     const handleDelete = id => {
         Swal.fire({
@@ -19,7 +22,7 @@ const Cart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cart/${id}`, {
+                fetch(`https://auto-trader-server-pbif25ges-arman-hossains-projects.vercel.app/cart/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -31,7 +34,7 @@ const Cart = () => {
                                 'Your Coffee has been deleted.',
                                 'success'
                             )
-                            const remaining = cartData.filter(cart => cart._id !== id);
+                            const remaining = carts.filter(cart => cart._id !== id);
                             setCarts(remaining);
                         }
                     })
