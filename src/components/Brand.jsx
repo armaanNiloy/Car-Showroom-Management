@@ -47,11 +47,11 @@ const Brand = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center items-center my-10 gap-5">
+            <div className="flex flex-col md:flex-row text-center justify-center items-center my-10 gap-5">
                 <img className="w-32 h-32" src={requiredCars[0].brandImage} alt="" />
-                <h2 className="text-6xl">{id.id} Model</h2>
+                <h2 className="text-2xl md:text-6xl">{id.id} Model</h2>
             </div>
-            <div className="grid grid-cols-2 gap-10 my-10 mx-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-10 mx-2 md:mx-8 lg:mx-20">
                 {
                     
                     requiredCars.length> 0?
