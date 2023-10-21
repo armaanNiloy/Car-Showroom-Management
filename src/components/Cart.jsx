@@ -19,7 +19,7 @@ const Cart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/cart/${id}`, {
+                fetch(`https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cart/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

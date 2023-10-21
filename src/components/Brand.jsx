@@ -1,13 +1,20 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Cars from "./Cars";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const Brand = () => {
     const id = useParams();
     console.log(id);
     const cars = useLoaderData();
+    const {loading} = useContext(AuthContext);
     console.log(cars);
     const requiredCars = cars.filter(car => car.brand === id.id);
+    if(loading){
+        return <span className="loading loading-bars loading-lg"></span>;
+    }
+    
     return (
         <div>
             <div className="carousel w-full">
@@ -46,6 +53,7 @@ const Brand = () => {
             </div>
             <div className="grid grid-cols-2 gap-10 my-10 mx-20">
                 {
+                    
                     requiredCars.length> 0?
                     requiredCars.map((car, idx) => <Cars key={idx} car={car}></Cars>)
                     :

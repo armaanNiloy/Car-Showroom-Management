@@ -7,7 +7,7 @@ const Details = () => {
     const { name, brand, type, rating, description, price, photo, brandImage } = car;
     const newCar = { name, brand, type, rating, description, price, photo, brandImage };
     const handleAddCart = () => {
-        fetch('http://localhost:5000/cart', {
+        fetch('https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

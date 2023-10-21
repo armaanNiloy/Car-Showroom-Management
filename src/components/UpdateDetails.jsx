@@ -25,7 +25,7 @@ const UpdateDetails = () => {
         else if(brand === 'Audi')brandImage = 'https://i.ibb.co/w6sKZ9q/logo-Audi.png';
         const newCar = { name, brand, type, rating, description, price, photo, brandImage};
         console.log(newCar);
-        fetch(`http://localhost:5000/cars/${_id}`, {
+        fetch(`https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cars/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

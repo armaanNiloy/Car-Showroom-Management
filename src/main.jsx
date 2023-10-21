@@ -34,22 +34,22 @@ const router = createBrowserRouter([
       {
         path: 'brand/:id',
         element: <Brand></Brand>,
-        loader: () => fetch('http://localhost:5000/cars')
+        loader: () => fetch('https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cars')
       },
       {
         path: 'details/:id',
         element: <PrivateRoutes><Details></Details></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`)
+        loader: ({ params }) => fetch(`https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cars/${params.id}`)
       },
       {
         path: 'update/:id',
         element: <PrivateRoutes><UpdateDetails></UpdateDetails></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`)
+        loader: ({ params }) => fetch(`https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cars/${params.id}`)
       },
       {
         path: '/cart',
         element: <PrivateRoutes><Cart></Cart></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/cart')
+        loader: () => fetch('https://auto-trader-server-34i8asld4-arman-hossains-projects.vercel.app/cart')
       },
       {
         path: '/signIn',
